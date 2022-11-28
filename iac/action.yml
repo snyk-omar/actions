@@ -11,9 +11,7 @@ inputs:
   args:
     description: "Additional arguments to pass to Snyk"
   file:
-    description: "File to test. Do not use if you are using directory"
-  directory:
-    description: "Directory with IaC files to test. Do not use if you are using file"
+    description: "File to test"
   json:
     description: "Output a snyk.json file with results if running the test command"
     default: false
@@ -30,6 +28,5 @@ runs:
   - snyk
   - iac
   - ${{ inputs.command }}
-  - ${{ inputs.directory }}
   - ${{ inputs.file }}
   - ${{ inputs.args }}
